@@ -20,7 +20,8 @@ pipeline {
 			}
 		}
 		stage('---package---'){
-			
+			tools {
+				maven 'maven-3.8.2'
 			steps {
 				
 				sh "mvn package"
@@ -34,7 +35,7 @@ pipeline {
 				sh "mvn install"
 			}
 	}
-	post {
+  post {
 		success {
 			echo 'realtime job was built successfully'
 		}
@@ -42,5 +43,4 @@ pipeline {
 			echo 'job was not build..it was failed'
 		}
 	}
-}
 }
