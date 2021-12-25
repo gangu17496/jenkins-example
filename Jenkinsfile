@@ -26,6 +26,13 @@ pipeline {
 				sh "mvn package"
 			}
 		}
+		stage('install') {
+			tools {
+				maven 'maven-3.8.3'
+			}
+			steps {
+				sh "mvn install"
+			}
 	}
 	post {
 		success {
