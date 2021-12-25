@@ -35,6 +35,7 @@ pipeline {
 				sh "mvn install"
 			}
 	}
+	}
   post {
 		success {
 			echo 'realtime job was built successfully'
